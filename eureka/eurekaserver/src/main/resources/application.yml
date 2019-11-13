@@ -6,9 +6,22 @@ eureka:
     hostname: localhost
   client:
     registerWithEureka: false
-      fetchRegistry: false
-      serviceUrl:
-        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
     enableSelfPreservation: false
+    use-read-only-response-cache: false
+    response-cache-auto-expiration-in-seconds: 10
+
+spring:
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
