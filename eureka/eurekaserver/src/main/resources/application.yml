@@ -11,7 +11,9 @@ eureka:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
   server:
     waitTimeInMsWhenSyncEmpty: 0
+    #是否需要开启自我保护模式
     enableSelfPreservation: false
+    #是否使用只读的response-cache
     use-read-only-response-cache: false
     response-cache-auto-expiration-in-seconds: 10
 
